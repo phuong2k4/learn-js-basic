@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise-DOM</title>
+</head>
+<body>
+    <button>9a</button>
+    <button class="btn">9b</button>
+    
+    <button class="heads" onclick="changeText('heads')">heads</button>
+    <button class="tails" onclick="changeText('tails')">tails</button>
+    <p class="text"></p>
+    
+    <input placeholder="Enter your name: " class="name" onkeypress="press(event)">
+    <button onclick="
+        const name = document.querySelector('.name').value;
+        showName(name);
+    ">Submit</button>
+    <p class="js-name"></p>
+
+    <input placeholder="Enter keyword: " class="key" onkeyup="keyshow(event);">
+    <p class="keyshow"></p>
+    
+    <button>Show Quantity</button>
+    <button onclick="cart_quantity(1)">Add to Cart</button>
+    <button onclick="cart_quantity(2)">+2</button>
+    <button onclick="cart_quantity(3)">+3</button>
+    <button onclick="cart_quantity(4)">+4</button>
+    <button onclick="cart_quantity(5)">+5</button>
+    <button onclick="cart_quantity(-1)">Remove from cart</button>
+    <button onclick="cart_quantity(-2)">-2</button>
+    <button onclick="cart_quantity(-3)">-3</button>
+    <p class="cart">Cart Quantity: </p>
+
+    <p class="total"></p>
+    <button onclick="clickbtn(event,1)">1</button>
+    <button onclick="clickbtn(event,2)">2</button>
+    <button onclick="clickbtn(event,3)">3</button>
+    <button onclick="clickbtn(event,'+')">+</button>
+    <script>
+
+        console.log(document.querySelector("button"))
+        var btn = document.querySelector(".btn");
+        btn.innerHTML = "9b done"
+        function changeText(choose){
+            document.querySelector(".text").innerHTML = `you choose : ${choose}`
+        }
+
+        function showName (){
+            const name = document.querySelector(".name").value;
+            document.querySelector(".js-name").innerHTML = `Your name is: ${name}`
+        }
+
+        function press(event){
+            if(event.key==="Enter"){
+                showName();
+            }
+        }
+
+        function keyshow(event){
+            var text = document.querySelector(".keyshow");
+            text.innerHTML = document.querySelector(".key").value
+        }
+
+        var total = 0;
+        function cart_quantity(number){
+            total += number
+            document.querySelector(".cart").innerHTML = `Cart Quantity: ${total}`
+        }
+
+        var text = ''
+        function clickbtn(event,key){
+            text += key
+            document.querySelector(".total").innerHTML = text
+        }
+    </script>
+</body>
+</html>

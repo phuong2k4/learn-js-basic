@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+</head>
+<body>
+    <button class="dl-btn" onclick="clickbtn()">Download</button>
+
+    <div>Add cart solution</div>
+    <button class="cart-js" onclick="addcart();">Add to cart</button>
+    <div class="alert"></div>
+    <script>
+        const btn_dl = document.querySelector(".dl-btn")
+        function clickbtn(){
+            const load = setTimeout(function(){
+                btn_dl.innerHTML = "Loading..."
+            },2000)
+            const finish = setTimeout(function(){
+                btn_dl.innerHTML = "Finished"
+            },4000)
+        }
+
+        const alertcs = document.querySelector(".alert")
+        var isprss = false;
+        var time;
+        var out;
+        function addcart(){
+
+            if(!isprss){
+                time = setTimeout(()=>{   
+                    alertcs.innerHTML = "Added";
+                },1000)
+                out = setTimeout(()=>{
+                    alertcs.innerHTML = "";
+                    isprss = false
+                },2000)
+                isprss = true
+            }
+            else{
+                clearInterval(out) 
+                alertcs.innerHTML = "Added";
+                out = setTimeout(()=>{
+                    alertcs.innerHTML = ""
+                },2000)
+            }
+        }
+
+        a = [1,2,3,4]
+        function add(array, num){
+            const arr2 = array.map((ele)=>{
+                return ele += num;
+            })
+            console.log(arr2)
+        }
+        add(a,3)
+
+        var count = 0;
+        arr = ["egg","egg","apple","egg","ham"]
+        const fil = arr.filter((ele,ind)=>{
+            if (ele === 'egg'){
+                count++;
+                return count > 2;
+            }
+            return true
+        })
+        console.log(fil)
+    </script>
+</body>
+</html>

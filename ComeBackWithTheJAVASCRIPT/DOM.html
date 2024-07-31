@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        *{
+
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "JetBrains Mono";
+            font-weight: bold;
+        }
+        body{
+            height: 100vh;
+        }
+        .js-sub, .js-btn{
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            transition: .3s ease-in;
+        }
+        .btn-press{
+            background-color: rgb(187, 186, 186);
+            color: rgb(0, 0, 0);
+            transition: .3s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <p>Youtube Subscribe Button</p>
+    <button class="js-sub" onclick="subcribeBtn()">Subcribe</button>
+
+    <script>
+        //document.body.innerHTML = "Body has changed"
+        /*
+        document.title = "DOM"
+
+        console.log(typeof(document.body), typeof(document.title))// object  && string
+        console.log(document.body.innerHTML)
+
+        document.body.innerHTML = "<h1>Changed</h1>"
+        */
+
+        // truy van den phan tu trong tai lieu
+        /*
+        const btn = document.querySelector("button")
+        btn.innerHTML = 'Changed by query'
+        document.querySelector(".js-btn").innerHTML = "Changed by ClassName"
+        */
+
+        function subcribeBtn(){
+            const btn = document.querySelector(".js-sub");
+            btn.onclick = function (){
+                if(btn.innerText === 'Subcribe'){
+                    btn.innerHTML = "Subcribed👀";
+                    btn.classList.add("btn-press")
+                }
+                else{
+                    btn.innerHTML = "Subcribe";
+                    btn.classList.remove("btn-press")
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

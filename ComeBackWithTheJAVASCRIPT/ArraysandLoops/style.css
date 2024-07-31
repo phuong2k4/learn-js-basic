@@ -1,0 +1,53 @@
+*{
+    font-family: 'JetBrains Mono';
+    font-weight: bold;
+}
+body{
+    height: 90vh;
+}
+h1{
+    font-size: 50px;
+}
+.todo-js{
+    padding: 10px 30px;
+}
+.btn-js{
+    padding: 12px 36px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: .5s ease;
+    cursor: pointer;
+}
+.btn-js:hover{
+    background-color: rgb(5, 175, 5);
+    color: rgb(68, 68, 68);
+    transition: .5s ease;
+}
+
+.del-js{
+    padding: 10px;
+    background-color: rgb(250, 68, 68);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: .5s ease;
+}
+
+.del-js:hover{
+    transition: .5s ease;
+    background-color: rgb(255, 131, 131);
+    color: rgb(90, 63, 28);
+}
+
+.date-js{
+    padding: 9px 30px;
+}
+
+.css-todo, .todo-main{
+    display: grid;
+    grid-template-columns: 250px 200px 95px;
+    margin-bottom: 10px;
+    gap: 10px;
+}

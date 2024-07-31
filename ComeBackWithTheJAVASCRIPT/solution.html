@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution</title>
+</head>
+<body>
+    
+    <a href="/ComeBackWithTheJAVASCRIPT/DOM.html"><h1>Youtube Subcribe</h1></a>
+    
+    <a href="/ComeBackWithTheJAVASCRIPT/RPS.html"><h1>Rock Paper Scissosr</h1></a>
+
+    <a href="/ComeBackWithTheJAVASCRIPT/WindowObject.html"><h1>Amazon Shipping</h1></a>
+    <script>
+        const product1 = {
+            name: "basketball",
+            price: 2095
+        }
+        const product2 = {
+            name: "football",
+            price: 1599
+        }
+        //product1.price -= 500;
+        //console.log(product1)
+        //product1["delivery-time"] = "3days";
+        //console.log(product1)
+
+        function comparePrice(product1, product2){
+            if(product1.price > product2.price){
+                return product2.name;
+            }else{
+                return product1.name;
+            }
+            
+        }
+        console.log(comparePrice(product1,product2));
+
+        function isSameProduct(product1,product2){
+            if (product1.name == product2.name && product1.price == product2.price){
+                return true;
+            }
+            return false;
+        }
+        console.log(isSameProduct(product1,product2));
+
+        var string = "Good Morning";
+        console.log(string.toLowerCase())
+        console.log(string.repeat(2))
+
+        
+    </script>
+</body>
+</html>

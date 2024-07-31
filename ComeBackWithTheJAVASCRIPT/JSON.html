@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - Javascript Object Notation</title>
+</head>
+<body>
+    <script>
+        //convert object to json type
+
+        const object = {
+            name: "david",
+            age: 21,
+            job: {
+                nameJob: "Coder",
+                salary: 157
+            }
+        }
+        //convert object to json
+        const convertJS = JSON.stringify(object)
+        console.log(convertJS)
+        //convert json to object 
+        const convertOJ = JSON.parse(convertJS)
+        console.log(convertOJ)
+    </script>
+</body>
+</html>

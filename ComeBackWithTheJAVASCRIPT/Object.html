@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name: "noodle",
+            price: 150,
+            rating: {
+                star: 4.5,
+                count: 78
+            },
+            time: function timeDone(minutes){
+                console.log(`${minutes} minutes`)
+            }
+        }
+        console.log(obj.name + ": " + obj.price + "$");
+        // object.function
+        obj.time(25)
+        //method''
+        console.log('wellcome'.length)
+        //object objt reference to value object obj
+        const obj1 = {
+            message: "Error"
+        };
+        
+        const objt = obj1;
+        const obj2 = {
+            message: "Error"
+        }
+        console.log(obj1===obj2) // return false because obj1 and obj2 not contain value, they reference address of value (message address)
+        console.log(obj1===objt) // return true because objt is reference to obj1 and they all the same value
+
+        const obj3 = {
+            message: "Error",
+            status: 404
+        }
+        // this code call destructuring shortcut
+        // use for: easier way to take properties out of object
+        const {message,status} = obj3; 
+        console.log(message,status)
+        // shorthand propreties
+        const obj4 = {
+            //message: message
+            //status: status
+            message,
+            status,
+            //method: function errorShow(){
+            //    console.log("Invalue");
+            //}
+            // shorthand method
+            method(){
+                console.log("Invalue");
+            }
+        }
+        console.log(obj4)
+        obj4.method();
+    </script>
+</body>
+</html>

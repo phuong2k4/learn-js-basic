@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Shipping</title>
+    <style>
+        *{
+            font-weight: bold;
+            font-family: "JetBrains Mono";
+            font-size: 20px;
+        }
+        body{
+            height: 100vh;
+        }
+        .input-style{
+            padding: 10px;
+        }
+        button{
+            border: none;
+            border-radius: 5px;
+            background-color: green;
+            padding: 12px;
+            color: white;
+            transition: .5s ease;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: gray;
+            color: white;
+            transition: .5s ease;
+        }
+    </style>
+</head>
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40 = +$10 shipping</p>
+    <p>Oder over $40 = Free shipping</p>
+    <input placeholder="Cost of order" class="cost-input input-style" onkeypress="calTotal();">
+    <button onclick="get_cost();">Calculator</button>
+    <p class="total"></p>
+
+    <script>
+        function calTotal(){
+            if(event.key==="Enter"){
+                get_cost();
+            }
+        }
+        function get_cost(){
+            const cost = document.querySelector(".cost-input")
+            var convert = Number(cost.value)
+            console.log(convert)
+            if (convert < 40){
+                convert += 10;
+            }
+            document.querySelector(".total").innerHTML = `$${convert.toFixed(2)}` ;
+        }
+
+
+        //window object
+        //window.console.log("window object")
+        //window.alert("Alert using window object")
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <button class="event-btn">Click</button>
+    <script> 
+        function eventlistener (){
+            event_btn.innerHTML = "Change by Click Event"
+        }
+        const event_btn = document.querySelector(".event-btn")
+        event_btn.addEventListener("click",eventlistener)
+//        event_btn.removeEventListener("click",eventlistener)
+// Regular function and arrow function
+        /*
+        const regularFunction = (param)=>{
+            console.log(`Print by ${param}`)
+        }
+        regularFunction("regular Function");
+        
+        const arrowFunction = (param)=>{
+            console.log(`Print by ${param}`)
+        }
+        arrowFunction("arrow Function");
+        */
+//shorthand method syntax
+        /*
+        const obj = {
+            method1: ()=>{
+                //do something
+            }
+            method2(){
+                //do something
+            }
+        }
+        */
+// Filter and Map function
+        /*
+        const filterFnc = [1,-2,3].filter((value,index)=>{
+            return [value] > 0;
+        })
+        console.log(filterFnc)
+
+        const mapFnc = [1,2,3].map((value,index)=>{
+            return value + 1; 
+        })
+        console.log(mapFnc)
+        */
+// ShortCut of arrow functions
+        const mapFnc = [1,2,3].map(value => value + 1)
+        console.log(mapFnc)
+    </script>
+</body>
+</html>

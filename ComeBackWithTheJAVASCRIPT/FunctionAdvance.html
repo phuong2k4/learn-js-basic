@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced</title>
+</head>
+<body>
+    <script>
+        /*Normal Function*/
+        //hoisting
+        console.log(addOne1(2));
+        function addOne1(a){
+            return a+=1;
+        }
+        
+        /*Another ways to create function*/
+        const addOne = function (a){
+            return a+=1;
+        }
+        console.log(addOne(1));
+
+        /*create function in object*/
+        const obj = {
+            a: 2,
+            muti: function (){
+                console.log("Function inside Obj")
+            }
+        }
+        obj.muti();
+
+        /*function inside function or callback*/
+        function callback(param){
+            param();
+        }
+        callback(function(){
+            console.log("Call Back Function");
+        })
+
+// Asynchronous Code // Khong dong bo ma
+        /*SetTimeOut function*/
+        setTimeout(function (){
+            console.log("Time Out, print function")
+        },3000)
+
+        /*Set Interval function*/
+        setInterval(function(){
+            console.log("Time Each 3 second, print function")
+        }, 3000)
+// For Each element
+        /*forEach(function(){})*/
+        const array = [1,2,3];
+        array.forEach(function(val,ind){
+            console.log(val,ind)
+        })
+    </script>
+</body>
+</html>
